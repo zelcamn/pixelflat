@@ -1,11 +1,12 @@
 from telegram.ext import Updater, MessageHandler, Filters
 from telegram.ext import CallbackContext, CommandHandler
-
+from main import coords
 
 def echo(update, context):
     try:
         list = update.message.text.split(' ')
         print(list[1:])
+        coords = list[1:]
         print(context.text)
         update.message.reply_text('succesful')
     except:
